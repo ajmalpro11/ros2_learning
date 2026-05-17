@@ -25,6 +25,7 @@ setup(
     entry_points={
         "console_scripts": [
             "arm_controller = my_robot_arm.arm_controller:main",
+            "pick_and_place = my_robot_arm.pick_and_place:main",
         ],
     },
 )

@@ -2,8 +2,8 @@
 
 Aspiring mechatronics engineer learning robotics through hands-on projects.
 
-## Robot Arm in Action
-![Robotic Arm Moving](images/arm_moving.gif)
+## Pick and Place Robot Arm Demo
+![Pick and Place Demo](images/pick_and_place.gif)
 
 ## Robot Arm in RViz2
 ![3-Joint Robotic Arm](images/arm_rviz2.png)
@@ -14,9 +14,10 @@ Aspiring mechatronics engineer learning robotics through hands-on projects.
 - [Session 03 — Gazebo, URDF, RViz2 & Joint States](README_03_Gazebo_URDF_RViz2.md)
 - [Session 04 — Built a 3-Joint Robotic Arm URDF](README_04_Robotic_Arm_URDF.md)
 - [Session 05 — Arm Controller Node + Automated Motion](README_05_Arm_Controller.md)
+- [Session 06 — Pick and Place Capstone Project](README_06_Pick_and_Place.md)
 
 ## Final Goal
-Build a pick and place robotic arm simulation using ROS 2 + Gazebo.
+Build a vision based pick and place robotic arm using ROS 2 + real hardware.
 
 ## Stack
 ROS 2 Jazzy · Ubuntu 24.04 · WSL2 · Python · Gazebo · RViz2 · URDF
