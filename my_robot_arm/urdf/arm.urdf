@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<robot name="my_robot_arm">
+
+  <!-- BASE LINK - fixed to ground -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.1" radius="0.07"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- UPPER ARM LINK -->
+  <link name="upper_arm_link">
+    <visual>
+      <origin xyz="0 0 0.15" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.3" radius="0.03"/>
+      </geometry>
+      <material name="red">
+        <color rgba="0.8 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- SHOULDER JOINT - connects base to upper arm -->
+  <joint name="shoulder_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="upper_arm_link"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/>
+  </joint>
+
+  <!-- FOREARM LINK -->
+  <link name="forearm_link">
+    <visual>
+      <origin xyz="0 0 0.125" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.25" radius="0.025"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0 0.8 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- ELBOW JOINT - connects upper arm to forearm -->
+  <joint name="elbow_joint" type="revolute">
+    <parent link="upper_arm_link"/>
+    <child link="forearm_link"/>
+    <origin xyz="0 0 0.3" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/>
+  </joint>
+
+  <!-- GRIPPER LINK -->
+  <link name="gripper_link">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.04"/>
+      </geometry>
+      <material name="yellow">
+        <color rgba="0.8 0.8 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- WRIST JOINT - connects forearm to gripper -->
+  <joint name="wrist_joint" type="revolute">
+    <parent link="forearm_link"/>
+    <child link="gripper_link"/>
+    <origin xyz="0 0 0.25" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/>
+  </joint>
+
+</robot>
